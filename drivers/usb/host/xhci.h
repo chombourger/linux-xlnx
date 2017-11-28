@@ -1663,6 +1663,7 @@ struct xhci_hcd {
 #define XHCI_STREAM_QUIRK	(1 << 25)
 /* For controller with a broken Port Disable implementation */
 #define XHCI_BROKEN_PORT_PED	(1 << 26)
+#define XHCI_LIMIT_ENDPOINT_INTERVAL_7	(1 << 27)
 
 	unsigned int		num_active_eps;
 	unsigned int		limit_active_eps;
