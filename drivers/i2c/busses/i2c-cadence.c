@@ -1441,12 +1441,12 @@ static int cdns_i2c_probe(struct platform_device *pdev)
 
 	cdns_i2c_init(id);
 
-	dev_info(&pdev->dev, "%u kHz mmio %08lx irq %d\n",
-		 id->i2c_clk / 1000, (unsigned long)r_mem->start, id->irq);
-
 	ret = i2c_add_adapter(&id->adap);
 	if (ret < 0)
 		goto err_clk_dis;
+
+	dev_info(&pdev->dev, "%u kHz mmio %08lx irq %d\n",
+		 id->i2c_clk / 1000, (unsigned long)r_mem->start, id->irq);
 
 	return 0;
 
